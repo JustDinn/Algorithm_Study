@@ -5,7 +5,6 @@ from urllib import parse
 
 def main():
     content = ""
-    content += HEADER
     
     directories = [];
     solveds = [];
