@@ -1,14 +1,13 @@
-import Foundation
+var dict: [Int: Int] = [:]
+var dice = readLine()!.split(separator: " ").map { Int($0)! }
 
-let input = readLine()!.split(separator: " ").map { Int($0)! }
-let a = input[0], b = input[1], c = input[2]
+dice.sort()
+dice.forEach { dict[$0, default: 0] += 1 }
 
-if a == b && b == c {
-    print(10000 + a * 1000)
-} else if a == b || a == c {
-    print(1000 + a * 100)
-} else if b == c {
-    print(1000 + b * 100)
-} else {
-    print(max(a, b, c) * 100)
+if dict.count == 1 {    // 모두 같은 눈일 경우
+    print(10000 + dice[0] * 1000)
+} else if dict.count == 2 { // 같은 눈이 2개일 경우
+    print(1000 + dice[1] * 100)
+} else {    // 모두 다른 눈일 경우
+    print(dice[2] * 100)
 }
