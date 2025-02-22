@@ -18,6 +18,7 @@
 |25304. 영수증|[링크](./%EB%B0%B1%EC%A4%80/Bronze/25304.%E2%80%85%EC%98%81%EC%88%98%EC%A6%9D/%EC%98%81%EC%88%98%EC%A6%9D.swift)|
 |2557. Hello World|[링크](./%EB%B0%B1%EC%A4%80/Bronze/2557.%E2%80%85Hello%E2%80%85World/Hello%E2%80%85World.swift)|
 |2775. 부녀회장이 될테야|[링크](./%EB%B0%B1%EC%A4%80/Bronze/2775.%E2%80%85%EB%B6%80%EB%85%80%ED%9A%8C%EC%9E%A5%EC%9D%B4%E2%80%85%EB%90%A0%ED%85%8C%EC%95%BC/%EB%B6%80%EB%85%80%ED%9A%8C%EC%9E%A5%EC%9D%B4%E2%80%85%EB%90%A0%ED%85%8C%EC%95%BC.swift)|
+|3046. R2|[링크](./%EB%B0%B1%EC%A4%80/Bronze/3046.%E2%80%85R2/R2.swift)|
 |9046. 복호화|[링크](./%EB%B0%B1%EC%A4%80/Bronze/9046.%E2%80%85%EB%B3%B5%ED%98%B8%ED%99%94/%EB%B3%B5%ED%98%B8%ED%99%94.swift)|
 ### 🚀 Silver
 | 문제번호 | 링크 |
