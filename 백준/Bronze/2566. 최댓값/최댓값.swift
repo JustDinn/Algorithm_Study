@@ -1,19 +1,26 @@
-import Foundation
+// MARK: - Properties
 
-var maxVal = Int.min
+var maxNumber = -1
 var row = 0
 var col = 0
 
-for i in 0..<9 {
+// MARK: - Memo
+
+// MARK: - Main
+
+for i in 1..<10 {
     let input = readLine()!.split(separator: " ").map { Int($0)! }
-    for j in 0..<9 {
-        if input[j] > maxVal {
-            maxVal = input[j]
+    
+    for j in 0..<input.count {
+        if input[j] > maxNumber {
+            maxNumber = input[j]
             row = i
-            col = j
+            col = j + 1
         }
     }
 }
 
-print(maxVal)
-print("\(row + 1) \(col + 1)")
+print(maxNumber)
+print("\(row) \(col)")
+
+// MARK: - Functions
