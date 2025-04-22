@@ -1,21 +1,20 @@
-import Foundation
-
-while let line = readLine(), line != "0" {
+while true {
     var width = 0
-
-    for digit in line {
-        switch digit {
-        case "1":
-            width += 2
+    let input = readLine()!
+    
+    if input == "0" {
+        break
+    }
+    
+    input.forEach {
+        switch $0 {
         case "0":
             width += 4
+        case "1":
+            width += 2
         default:
             width += 3
         }
     }
-
-    width += line.count - 1  // 숫자 사이 공백
-    width += 2               // 양쪽 여백
-
-    print(width)
+    print(width + (input.count * 1 - 1) + 2)
 }
