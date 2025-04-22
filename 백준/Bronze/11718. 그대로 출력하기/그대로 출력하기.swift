@@ -1,5 +1,3 @@
-import Foundation
-
-while let line = readLine() {
-    print(line)
+while let input = readLine() {
+    print(input)
 }
