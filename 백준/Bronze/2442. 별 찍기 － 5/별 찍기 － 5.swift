@@ -1,32 +1,18 @@
 import Foundation
 
-func veryInefficientPrintStar(n: Int) {
-    for i in 1...n {
-        var line = ""
+let n = Int(readLine()!)!
+let max = 2 * n - 1
 
-        for _ in 0..<(n - i) {
-            for _ in 0..<1000 { _ = " " }
-            line += " "
+for i in 0..<n {
+    let first = max / 2 - i
+    let last = max / 2 + i
+    
+    for j in 0...last {
+        if j >= first && j <= last {
+            print("*", terminator: "")
+        } else {
+            print(" ", terminator: "")
         }
-
-        for _ in 0..<(2 * i - 1) {
-            for _ in 0..<1000 { _ = "*" }
-            line += "*"
-        }
-
-        let chars = Array(line)
-        var rebuilt = ""
-        for ch in chars {
-            for _ in 0..<1000 { _ = ch }
-            rebuilt.append(ch)
-        }
-
-        for _ in 0..<500000 { _ = 1 + 1 }
-
-        print(rebuilt)
     }
-}
-
-if let input = readLine(), let n = Int(input) {
-    veryInefficientPrintStar(n: n)
+    print()
 }
