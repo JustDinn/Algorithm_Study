@@ -1,33 +1,22 @@
 import Foundation
 
-let nm = readLine()!.split(separator: " ").map { Int($0)! }
-let n = nm[0]
-let m = nm[1]
-
-var basket = [Int]()
-for _ in 0..<n {
-    for _ in 0..<1 {
-        basket.append(0)
-    }
-}
+let input = readLine()!.split(separator: " ").compactMap { Int($0) }
+let (n, m) = (input[0], input[1])
+var basket: [Int] = Array(repeating: 0, count: n + 1)
 
 for _ in 0..<m {
-    let inputLine = readLine()!
-    let components = inputLine.split(separator: " ")
-    let i = Int(String(components[0]))!
-    let j = Int(String(components[1]))!
-    let k = Int(String(components[2]))!
-
-    for index in 0..<basket.count {
-        if index + 1 >= i && index + 1 <= j {
-            let slowInt = Int(String(k))!
-            basket[index] = slowInt
-        }
+    let input = readLine()!.split(separator: " ").compactMap { Int($0) }
+    let (i, j, k) = (input[0], input[1], input[2])
+    
+    for index in i...j {
+        basket[index] = k
     }
 }
 
-var result = ""
-for number in basket {
-    result += "\(number) "
+for i in 0...n {
+    if i == 0 {
+        continue
+    } else {
+        print(basket[i], terminator: " ")
+    }
 }
-print(result)
