@@ -1,34 +1,27 @@
-import Foundation
-
 let n = Int(readLine()!)!
-var result = [String]()
 
-for i in 0..<n {
-    var line = ""
-    
-    for _ in 0..<i {
-        line.append(" ")
+for i in 0..<2*n - 1 {
+    if i < n {
+        for j in 0..<2*n - 1 {
+            if j < i {
+                print(" ", terminator: "")
+            } else if j > 2*(n - 1) - i {
+                continue
+            } else {
+                print("*", terminator: "")
+            }
+        }
+        print()
+    } else {
+        for j in 0..<2*n - 1 {
+            if j > i {
+                continue
+            } else if j < 2*(n - 1) - i {
+                print(" ", terminator: "")
+            } else {
+                print("*", terminator: "")
+            }
+        }
+        print()
     }
-    for _ in 0..<(2 * (n - i) - 1) {
-        line.append("*")
-    }
-    
-    result.append(line)
-}
-
-for i in 1..<n {
-    var line = ""
-    
-    for _ in 0..<(n - i - 1) {
-        line.append(" ")
-    }
-    for _ in 0..<(2 * i + 1) {
-        line.append("*")
-    }
-    
-    result.append(line)
-}
-
-for line in result {
-    print(line)
 }
