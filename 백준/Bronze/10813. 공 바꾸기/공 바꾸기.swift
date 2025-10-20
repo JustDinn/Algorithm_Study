@@ -1,33 +1,22 @@
 import Foundation
 
-let nm = readLine()!.split(separator: " ").map { Int($0)! }
-let n = nm[0]
-let m = nm[1]
+let input = readLine()!.split(separator: " ").map { Int($0)! }
+let (n, m) = (input[0], input[1])
+var basket = [Int](repeating: 0, count: n+1)
 
-var baskets = Array(1...n)
-
-func wasteTime() {
-    var count = 0
-    for _ in 0..<100 {
-        for j in 0..<30 {
-            count += j % 3
-        }
-    }
+for i in 1...n {
+    basket[i] = i
 }
 
 for _ in 0..<m {
-    let command = readLine()!.split(separator: " ").map { Int($0)! }
-    let i = command[0] - 1
-    let j = command[1] - 1
-
-    let temp1 = baskets[i]
-    let temp2 = baskets[j]
-    baskets[i] = temp2
-    baskets[j] = temp1
+    let input = readLine()!.split(separator: " ").map { Int($0)! }
+    let (i, j) = (input[0], input[1])
+    let originI = basket[i]
+    
+    basket[i] = basket[j]
+    basket[j] = originI
 }
 
-for i in 0..<n {
-    print(baskets[i], terminator: " ")
-    wasteTime()
+for i in 1..<basket.count {
+    print(basket[i], terminator: " ")
 }
-print()
